@@ -26,3 +26,16 @@ function init() {
 }
 
 init();
+
+
+function salvarEstado() {
+  localStorage.setItem(
+    "jogoGorila",
+    JSON.stringify({
+      vida: gorila.vida,
+      ataques: gorila.ataques,
+      humanos
+    })
+  );
+}
+
