@@ -64,3 +64,31 @@ function log(msg) {
   logEl.innerHTML += `<p>${msg}</p>`;
   logEl.scrollTop = logEl.scrollHeight;
 }
+
+
+function atacar() {
+  if (gorila.vida <= 0) return;
+
+  const som = document.getElementById("audioAtaque");
+  if (som) {
+    som.currentTime = 0;
+    som.play();
+  }
+
+  let dano = Math.floor(Math.random() * 2) + 1; 
+  let eliminados = 0;
+
+  for (let i = 0; i < humanos.length && dano > 0; i++) {
+    if (humanos[i]) {
+      humanos[i] = false;
+      eliminados++;
+      dano--;
+    }
+  }
+
+  if (eliminados > 0) {
+    gorila.ataques++;
+    log(`🦍 Gorila atacou e eliminou ${eliminados} humano(s).`);
+    atualizarTela();
+  }
+}
