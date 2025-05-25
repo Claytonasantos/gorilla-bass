@@ -12,3 +12,17 @@ const ataquesEl = document.getElementById("ataques");
 const humanosEl = document.getElementById("humanosRestantes");
 const logEl = document.getElementById("log");
 const humanosContainer = document.getElementById("humanos");
+
+function init() {
+  const save = JSON.parse(localStorage.getItem("jogoGorila"));
+  if (save) {
+    gorila.vida = save.vida;
+    gorila.ataques = save.ataques;
+    humanos = save.humanos;
+  }
+  atualizarTela();
+  desenharHumanos();
+  humanosAtacam();
+}
+
+init();
