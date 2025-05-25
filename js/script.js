@@ -48,3 +48,13 @@ function desenharHumanos() {
     humanosContainer.appendChild(div);
   });
 }
+
+
+function atualizarTela() {
+  vidaEl.textContent = gorila.vida;
+  ataquesEl.textContent = gorila.ataques;
+  humanosEl.textContent = humanos.filter(h => h).length;
+  desenharHumanos();
+  salvarEstado();
+  verificarFim();
+}
