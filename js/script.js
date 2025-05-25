@@ -39,3 +39,12 @@ function salvarEstado() {
   );
 }
 
+function desenharHumanos() {
+  humanosContainer.innerHTML = "";
+  humanos.forEach((vivo) => {
+    const div = document.createElement("div");
+    div.classList.add("humano");
+    if (!vivo) div.classList.add("morto");
+    humanosContainer.appendChild(div);
+  });
+}
