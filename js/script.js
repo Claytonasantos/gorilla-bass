@@ -92,3 +92,24 @@ function atacar() {
     atualizarTela();
   }
 }
+
+function defender() {
+  if (!podeDefender || gorila.vida <= 0) {
+    log("⏳ Esperando para defender novamente...");
+    return;
+  }
+
+  gorila.defendendo = true;
+  podeDefender = false;
+  log("🛡️ Gorila está se defendendo por 1 turno.");
+
+  setTimeout(() => {
+    gorila.defendendo = false;
+    log("🛡️ Defesa do gorila acabou.");
+  }, 2000);
+
+  setTimeout(() => {
+    podeDefender = true;
+    log("✅ Defesa disponível novamente.");
+  }, 5000);
+}
