@@ -58,3 +58,9 @@ function atualizarTela() {
   salvarEstado();
   verificarFim();
 }
+
+
+function log(msg) {
+  logEl.innerHTML += `<p>${msg}</p>`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
