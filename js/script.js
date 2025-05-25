@@ -116,3 +116,15 @@ function humanosAtacam() {
     atualizarTela();
   }, 1200);
 }
+
+function verificarFim() {
+  if (gorila.vida <= 0) {
+    log("❌ O gorila foi derrotado.");
+    alert("Fim de jogo! O gorila perdeu.");
+    localStorage.clear();
+  } else if (humanos.filter(h => h).length === 0) {
+    log("✅ Todos os humanos foram derrotados!");
+    alert("Parabéns! O gorila venceu!");
+    localStorage.clear();
+  }
+}
