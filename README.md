@@ -7,6 +7,10 @@ Um mini game web interativo onde um poderoso gorila enfrenta 100 humanos! Desenv
 
 ---
 
+## Link do repositório
+
+https://github.com/Claytonasantos/gorilla-bass
+
 ## 🚀 Funcionalidades
 
 * 🦍 Ataque do gorila com efeito sonoro
