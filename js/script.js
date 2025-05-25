@@ -100,3 +100,19 @@ function curar() {
   log(`💊 Gorila recuperou ${cura} de vida.`);
   atualizarTela();
 }
+
+function humanosAtacam() {
+  setInterval(() => {
+    const vivos = humanos.filter(h => h).length;
+    if (vivos === 0 || gorila.vida <= 0) return;
+
+    const dano = Math.floor(Math.random() * 10) + 1;
+    const finalDano = gorila.defendendo ? Math.floor(dano / 2) : dano;
+
+    gorila.vida -= finalDano;
+    log(`👤 Humanos atacaram! Gorila perdeu ${finalDano} de vida.`);
+
+    if (gorila.vida < 0) gorila.vida = 0;
+    atualizarTela();
+  }, 1200);
+}
