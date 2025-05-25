@@ -92,3 +92,11 @@ function atacar() {
     atualizarTela();
   }
 }
+
+function curar() {
+  if (gorila.vida <= 0) return;
+  const cura = Math.floor(Math.random() * 3) + 1;
+  gorila.vida = Math.min(100, gorila.vida + cura);
+  log(`💊 Gorila recuperou ${cura} de vida.`);
+  atualizarTela();
+}
